@@ -3,8 +3,8 @@
 
 int * arrayMax(int * array, int n) {
   if(n==0)  return NULL;
-  int *max;
-  for(int i=0;i<n;i++) {
+  int *max=&array[0];
+  for(int i=1;i<n;i++) {
     if(*max<array[i])
       max=&array[i];
   }   return max; 
