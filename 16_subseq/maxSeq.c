@@ -10,7 +10,7 @@ size_t maxSeq(int * array,size_t n) {
     else {
       if(prevMax<currMax)
 	prevMax=currMax;
-      currMax=0;
+      currMax=1;
     }
   }
   return prevMax;
