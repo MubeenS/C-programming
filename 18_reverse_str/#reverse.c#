@@ -8,7 +8,7 @@ void reverse(char * str) {
   while(str[j]!='\0') j++;
   j--;
   while(i<=j) {
-    char  x =str[i];
+    char * x =str[i];
     str[i]=str[j];
   str[j]=x;
 }
