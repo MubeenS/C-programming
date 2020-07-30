@@ -41,15 +41,13 @@ void shuffle(deck_t * d){
 void assert_full_deck(deck_t * d) {
   int count ;
   card_t **cards = d->cards;
-  card_t card ;
+  card_t c;
   for(size_t i=0;i<d->n_cards;i++){
-    card = **(cards+i);
+    c= **(cards+i);
     count=0;
     for(size_t j=0;j<d->n_cards;j++) {
-      card_t c=**(cards+i);
-    int a=equals(card,c);
-    if(a==1)  count++;
-  }
+    if(equals(**(cards+j),c)) count++;
+     }
   assert(count==1);
-  }
+    }
 }
