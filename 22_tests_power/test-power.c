@@ -1,6 +1,5 @@
-#include <stdio.h>
-#include <stdbool.h>
 #include <stdlib.h>
+#include <stdbool.h>
 unsigned power (unsigned x, unsigned y);
 int main() {
   bool check = true;
