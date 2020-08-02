@@ -1,5 +1,7 @@
-Grading at Sun Aug  2 11:59:57 UTC 2020
+Grading at Sun Aug  2 12:06:09 UTC 2020
 Attempting to compile breaker.c 
+gcc -o breaker Wall Werror -std=gnu99 -ggdb3 breaker.c
+Makefile:2: recipe for target 'breaker' failed
 The code did not compile!
 
 Overall Grade: F
