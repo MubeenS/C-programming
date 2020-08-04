@@ -6,4 +6,7 @@ rowless.txt
 spacs.txt
 xline.txt
 spchar.txt
+<<<<<<< HEAD
 fortest.txt
+=======
+>>>>>>> c27d978c226ba6d3a24c668ea8abc205cc234348
