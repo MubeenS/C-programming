@@ -1,0 +1,7 @@
+colless.txt
+nonprintable.txt
+goodtest.txt
+rowless.txt
+spacs.txt
+xline.txt
+spchar.txt
