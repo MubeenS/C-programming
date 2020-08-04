@@ -1,12 +1,13 @@
-nline.txt
-colless.txt
-nonprintable.txt
 goodtest.txt
 rowless.txt
-spacs.txt
+colless.txt
+nline.txt
+space.txt
+nonprintable.txt
 xline.txt
+fake.txt
+for1.txt
 spchar.txt
-<<<<<<< HEAD
-fortest.txt
-=======
->>>>>>> c27d978c226ba6d3a24c668ea8abc205cc234348
+
+0 goodtest.txt
+toolarge.txt
