@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
     printSorted(f);
   }
   if(argc >1) {
-    for(int i=0;i<argc;i++) {
+    for(int i=1;i<argc;i++) {
       FILE *f= fopen(argv[i],"r");
       if(f==NULL) {
 	fprintf(stderr,"ERROR: could not open file \n");
