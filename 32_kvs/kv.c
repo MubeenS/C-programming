@@ -5,8 +5,8 @@
 
 
 
-kvarray_t * readKVs(const char * fname) {
-  //WRITE ME
+kvarray_t * readKVs(const char * fname){
+  kvpair_t pair;
 }
 
 void freeKVs(kvarray_t * pairs) {
