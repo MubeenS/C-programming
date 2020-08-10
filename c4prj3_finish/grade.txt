@@ -1,43 +1,43 @@
-Grading at Mon Aug 10 16:50:40 UTC 2020
+Grading at Mon Aug 10 16:58:32 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o cards.o cards.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o deck.o deck.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
-gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c cards.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c deck.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c eval.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c future.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c input.c
+gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 -c main.c
 gcc -o poker -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3 cards.o deck.o eval.o future.o input.o main.o
  - Starting with some Texas Hold'em hands
 Running a simulation with 20000 draws for 2 hands...
 Valgrind reported errors:
-==1607== Memcheck, a memory error detector
-==1607== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1607== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1607== Command: ./poker inp.txt 20000
-==1607== Parent PID: 1606
-==1607== 
-==1607== Invalid write of size 8
-==1607==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1607==    by 0x401616: build_remaining_deck (deck.c:156)
-==1607==    by 0x400A6C: main (main.c:59)
-==1607==  Address 0x5208090 is 0 bytes after a block of size 304 alloc'd
-==1607==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1607==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1607==    by 0x401616: build_remaining_deck (deck.c:156)
-==1607==    by 0x400A6C: main (main.c:59)
-==1607== 
-==1607== Invalid write of size 8
-==1607==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1607==    by 0x401616: build_remaining_deck (deck.c:156)
-==1607==    by 0x400A6C: main (main.c:59)
-==1607==  Address 0x5208250 is 0 bytes after a block of size 304 alloc'd
-==1607==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1607==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1607==    by 0x401616: build_remaining_deck (deck.c:156)
-==1607==    by 0x400A6C: main (main.c:59)
-==1607== 
+==141== Memcheck, a memory error detector
+==141== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==141== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==141== Command: ./poker inp.txt 20000
+==141== Parent PID: 140
+==141== 
+==141== Invalid write of size 8
+==141==    at 0x40149C: make_deck_exclude (deck.c:108)
+==141==    by 0x401616: build_remaining_deck (deck.c:156)
+==141==    by 0x400A6C: main (main.c:59)
+==141==  Address 0x5208090 is 0 bytes after a block of size 304 alloc'd
+==141==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==141==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==141==    by 0x401616: build_remaining_deck (deck.c:156)
+==141==    by 0x400A6C: main (main.c:59)
+==141== 
+==141== Invalid write of size 8
+==141==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==141==    by 0x401616: build_remaining_deck (deck.c:156)
+==141==    by 0x400A6C: main (main.c:59)
+==141==  Address 0x5208250 is 0 bytes after a block of size 304 alloc'd
+==141==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==141==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==141==    by 0x401616: build_remaining_deck (deck.c:156)
+==141==    by 0x400A6C: main (main.c:59)
+==141== 
 
 valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
 valgrind: Heap block lo/hi size mismatch: lo = 368, hi = 86019936.
@@ -48,26 +48,26 @@ probably go away.  Please try that before reporting this as a bug.
 
 
 host stacktrace:
-==1607==    at 0x38083F48: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x38084064: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x380841F1: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x38091A9C: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x3807D673: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x3807BF03: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x380800DA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x3807B49A: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x38059401: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1607==    by 0x802D59E7D: ???
-==1607==    by 0x802CA9F2F: ???
-==1607==    by 0x80200838F: ???
-==1607==    by 0x401194: shuffle (deck.c:34)
+==141==    at 0x38083F48: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x38084064: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x380841F1: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x38091A9C: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x3807D673: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x3807BF03: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x380800DA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x3807B49A: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x38059401: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==141==    by 0x802D59E7D: ???
+==141==    by 0x802CA9F2F: ???
+==141==    by 0x80200838F: ???
+==141==    by 0x401194: shuffle (deck.c:34)
 
 sched status:
   running_tid=1
 
-Thread 1: status = VgTs_Runnable (lwpid 1607)
-==1607==    at 0x4011AF: shuffle (deck.c:36)
-==1607==    by 0x400AC4: main (main.c:67)
+Thread 1: status = VgTs_Runnable (lwpid 141)
+==141==    at 0x4011AF: shuffle (deck.c:36)
+==141==    by 0x400AC4: main (main.c:67)
 
 
 Note: see also the FAQ in the source distribution.
@@ -84,220 +84,220 @@ version, and what OS and version you are using.  Thanks.
 
 Running a simulation with 25000 draws for 3 hands...
 Valgrind reported errors:
-==1612== Memcheck, a memory error detector
-==1612== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1612== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1612== Command: ./poker inp.txt 25000
-==1612== Parent PID: 1611
-==1612== 
-==1612== Invalid write of size 8
-==1612==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612==  Address 0x5208cd8 is 0 bytes after a block of size 248 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid write of size 8
-==1612==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612==  Address 0x5208e68 is 0 bytes after a block of size 248 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid read of size 8
-==1612==    at 0x40119A: shuffle (deck.c:35)
-==1612==    by 0x400AC4: main (main.c:67)
-==1612==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x401488: make_deck_exclude (deck.c:108)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid read of size 8
-==1612==    at 0x4011AF: shuffle (deck.c:36)
-==1612==    by 0x400AC4: main (main.c:67)
-==1612==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x401488: make_deck_exclude (deck.c:108)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid write of size 8
-==1612==    at 0x4011B2: shuffle (deck.c:36)
-==1612==    by 0x400AC4: main (main.c:67)
-==1612==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x401488: make_deck_exclude (deck.c:108)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid write of size 8
-==1612==    at 0x4011BB: shuffle (deck.c:37)
-==1612==    by 0x400AC4: main (main.c:67)
-==1612==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
-==1612==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1612==    by 0x401488: make_deck_exclude (deck.c:108)
-==1612==    by 0x401616: build_remaining_deck (deck.c:156)
-==1612==    by 0x400A6C: main (main.c:59)
-==1612== 
-==1612== Invalid read of size 4
-==1612==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1612==    by 0x400AD0: main (main.c:69)
-==1612==  Address 0x20000000e is not stack'd, malloc'd or (recently) free'd
-==1612== 
-==1612== 
-==1612== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1612==  Access not within mapped region at address 0x20000000E
-==1612==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1612==    by 0x400AD0: main (main.c:69)
-==1612==  If you believe this happened as a result of a stack
-==1612==  overflow in your program's main thread (unlikely but
-==1612==  possible), you can try to increase the size of the
-==1612==  main thread stack using the --main-stacksize= flag.
-==1612==  The main thread stack size used in this run was 8388608.
-==1612== 
-==1612== HEAP SUMMARY:
-==1612==     in use at exit: 2,224 bytes in 86 blocks
-==1612==   total heap usage: 164 allocs, 78 frees, 12,086 bytes allocated
-==1612== 
-==1612== LEAK SUMMARY:
-==1612==    definitely lost: 776 bytes in 17 blocks
-==1612==    indirectly lost: 248 bytes in 31 blocks
-==1612==      possibly lost: 0 bytes in 0 blocks
-==1612==    still reachable: 1,200 bytes in 38 blocks
-==1612==         suppressed: 0 bytes in 0 blocks
-==1612== Rerun with --leak-check=full to see details of leaked memory
-==1612== 
-==1612== For counts of detected and suppressed errors, rerun with: -v
-==1612== ERROR SUMMARY: 79 errors from 7 contexts (suppressed: 0 from 0)
+==146== Memcheck, a memory error detector
+==146== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==146== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==146== Command: ./poker inp.txt 25000
+==146== Parent PID: 145
+==146== 
+==146== Invalid write of size 8
+==146==    at 0x40149C: make_deck_exclude (deck.c:108)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146==  Address 0x5208cd8 is 0 bytes after a block of size 248 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid write of size 8
+==146==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146==  Address 0x5208e68 is 0 bytes after a block of size 248 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid read of size 8
+==146==    at 0x40119A: shuffle (deck.c:35)
+==146==    by 0x400AC4: main (main.c:67)
+==146==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x401488: make_deck_exclude (deck.c:108)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid read of size 8
+==146==    at 0x4011AF: shuffle (deck.c:36)
+==146==    by 0x400AC4: main (main.c:67)
+==146==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x401488: make_deck_exclude (deck.c:108)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid write of size 8
+==146==    at 0x4011B2: shuffle (deck.c:36)
+==146==    by 0x400AC4: main (main.c:67)
+==146==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x401488: make_deck_exclude (deck.c:108)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid write of size 8
+==146==    at 0x4011BB: shuffle (deck.c:37)
+==146==    by 0x400AC4: main (main.c:67)
+==146==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
+==146==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==146==    by 0x401488: make_deck_exclude (deck.c:108)
+==146==    by 0x401616: build_remaining_deck (deck.c:156)
+==146==    by 0x400A6C: main (main.c:59)
+==146== 
+==146== Invalid read of size 4
+==146==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==146==    by 0x400AD0: main (main.c:69)
+==146==  Address 0x20000000e is not stack'd, malloc'd or (recently) free'd
+==146== 
+==146== 
+==146== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==146==  Access not within mapped region at address 0x20000000E
+==146==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==146==    by 0x400AD0: main (main.c:69)
+==146==  If you believe this happened as a result of a stack
+==146==  overflow in your program's main thread (unlikely but
+==146==  possible), you can try to increase the size of the
+==146==  main thread stack using the --main-stacksize= flag.
+==146==  The main thread stack size used in this run was 8388608.
+==146== 
+==146== HEAP SUMMARY:
+==146==     in use at exit: 2,224 bytes in 86 blocks
+==146==   total heap usage: 164 allocs, 78 frees, 12,086 bytes allocated
+==146== 
+==146== LEAK SUMMARY:
+==146==    definitely lost: 776 bytes in 17 blocks
+==146==    indirectly lost: 248 bytes in 31 blocks
+==146==      possibly lost: 0 bytes in 0 blocks
+==146==    still reachable: 1,200 bytes in 38 blocks
+==146==         suppressed: 0 bytes in 0 blocks
+==146== Rerun with --leak-check=full to see details of leaked memory
+==146== 
+==146== For counts of detected and suppressed errors, rerun with: -v
+==146== ERROR SUMMARY: 79 errors from 7 contexts (suppressed: 0 from 0)
 Running a simulation with 25000 draws for 3 hands...
 Valgrind reported errors:
-==1617== Memcheck, a memory error detector
-==1617== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1617== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1617== Command: ./poker inp2.txt 25000
-==1617== Parent PID: 1616
-==1617== 
-==1617== Invalid write of size 8
-==1617==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617==  Address 0x5208cd8 is 0 bytes after a block of size 248 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid write of size 8
-==1617==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617==  Address 0x5208e68 is 0 bytes after a block of size 248 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid read of size 8
-==1617==    at 0x40119A: shuffle (deck.c:35)
-==1617==    by 0x400AC4: main (main.c:67)
-==1617==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x401488: make_deck_exclude (deck.c:108)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid read of size 8
-==1617==    at 0x4011AF: shuffle (deck.c:36)
-==1617==    by 0x400AC4: main (main.c:67)
-==1617==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x401488: make_deck_exclude (deck.c:108)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid write of size 8
-==1617==    at 0x4011B2: shuffle (deck.c:36)
-==1617==    by 0x400AC4: main (main.c:67)
-==1617==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x401488: make_deck_exclude (deck.c:108)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid write of size 8
-==1617==    at 0x4011BB: shuffle (deck.c:37)
-==1617==    by 0x400AC4: main (main.c:67)
-==1617==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
-==1617==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1617==    by 0x401488: make_deck_exclude (deck.c:108)
-==1617==    by 0x401616: build_remaining_deck (deck.c:156)
-==1617==    by 0x400A6C: main (main.c:59)
-==1617== 
-==1617== Invalid read of size 4
-==1617==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1617==    by 0x400AD0: main (main.c:69)
-==1617==  Address 0x20000000e is not stack'd, malloc'd or (recently) free'd
-==1617== 
-==1617== 
-==1617== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1617==  Access not within mapped region at address 0x20000000E
-==1617==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1617==    by 0x400AD0: main (main.c:69)
-==1617==  If you believe this happened as a result of a stack
-==1617==  overflow in your program's main thread (unlikely but
-==1617==  possible), you can try to increase the size of the
-==1617==  main thread stack using the --main-stacksize= flag.
-==1617==  The main thread stack size used in this run was 8388608.
-==1617== 
-==1617== HEAP SUMMARY:
-==1617==     in use at exit: 2,224 bytes in 86 blocks
-==1617==   total heap usage: 164 allocs, 78 frees, 12,086 bytes allocated
-==1617== 
-==1617== LEAK SUMMARY:
-==1617==    definitely lost: 776 bytes in 17 blocks
-==1617==    indirectly lost: 248 bytes in 31 blocks
-==1617==      possibly lost: 0 bytes in 0 blocks
-==1617==    still reachable: 1,200 bytes in 38 blocks
-==1617==         suppressed: 0 bytes in 0 blocks
-==1617== Rerun with --leak-check=full to see details of leaked memory
-==1617== 
-==1617== For counts of detected and suppressed errors, rerun with: -v
-==1617== ERROR SUMMARY: 79 errors from 7 contexts (suppressed: 0 from 0)
+==151== Memcheck, a memory error detector
+==151== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==151== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==151== Command: ./poker inp2.txt 25000
+==151== Parent PID: 150
+==151== 
+==151== Invalid write of size 8
+==151==    at 0x40149C: make_deck_exclude (deck.c:108)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151==  Address 0x5208cd8 is 0 bytes after a block of size 248 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid write of size 8
+==151==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151==  Address 0x5208e68 is 0 bytes after a block of size 248 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid read of size 8
+==151==    at 0x40119A: shuffle (deck.c:35)
+==151==    by 0x400AC4: main (main.c:67)
+==151==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x401488: make_deck_exclude (deck.c:108)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid read of size 8
+==151==    at 0x4011AF: shuffle (deck.c:36)
+==151==    by 0x400AC4: main (main.c:67)
+==151==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x401488: make_deck_exclude (deck.c:108)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid write of size 8
+==151==    at 0x4011B2: shuffle (deck.c:36)
+==151==    by 0x400AC4: main (main.c:67)
+==151==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x401488: make_deck_exclude (deck.c:108)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid write of size 8
+==151==    at 0x4011BB: shuffle (deck.c:37)
+==151==    by 0x400AC4: main (main.c:67)
+==151==  Address 0x5209bb8 is 24 bytes before a block of size 8 alloc'd
+==151==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==151==    by 0x401488: make_deck_exclude (deck.c:108)
+==151==    by 0x401616: build_remaining_deck (deck.c:156)
+==151==    by 0x400A6C: main (main.c:59)
+==151== 
+==151== Invalid read of size 4
+==151==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==151==    by 0x400AD0: main (main.c:69)
+==151==  Address 0x20000000e is not stack'd, malloc'd or (recently) free'd
+==151== 
+==151== 
+==151== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==151==  Access not within mapped region at address 0x20000000E
+==151==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==151==    by 0x400AD0: main (main.c:69)
+==151==  If you believe this happened as a result of a stack
+==151==  overflow in your program's main thread (unlikely but
+==151==  possible), you can try to increase the size of the
+==151==  main thread stack using the --main-stacksize= flag.
+==151==  The main thread stack size used in this run was 8388608.
+==151== 
+==151== HEAP SUMMARY:
+==151==     in use at exit: 2,224 bytes in 86 blocks
+==151==   total heap usage: 164 allocs, 78 frees, 12,086 bytes allocated
+==151== 
+==151== LEAK SUMMARY:
+==151==    definitely lost: 776 bytes in 17 blocks
+==151==    indirectly lost: 248 bytes in 31 blocks
+==151==      possibly lost: 0 bytes in 0 blocks
+==151==    still reachable: 1,200 bytes in 38 blocks
+==151==         suppressed: 0 bytes in 0 blocks
+==151== Rerun with --leak-check=full to see details of leaked memory
+==151== 
+==151== For counts of detected and suppressed errors, rerun with: -v
+==151== ERROR SUMMARY: 79 errors from 7 contexts (suppressed: 0 from 0)
 Running a simulation with 25000 draws for 2 hands...
 Valgrind reported errors:
-==1622== Memcheck, a memory error detector
-==1622== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1622== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1622== Command: ./poker inp2.txt 25000
-==1622== Parent PID: 1621
-==1622== 
-==1622== Invalid write of size 8
-==1622==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1622==    by 0x401616: build_remaining_deck (deck.c:156)
-==1622==    by 0x400A6C: main (main.c:59)
-==1622==  Address 0x5208090 is 0 bytes after a block of size 304 alloc'd
-==1622==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1622==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1622==    by 0x401616: build_remaining_deck (deck.c:156)
-==1622==    by 0x400A6C: main (main.c:59)
-==1622== 
-==1622== Invalid write of size 8
-==1622==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1622==    by 0x401616: build_remaining_deck (deck.c:156)
-==1622==    by 0x400A6C: main (main.c:59)
-==1622==  Address 0x5208250 is 0 bytes after a block of size 304 alloc'd
-==1622==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1622==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1622==    by 0x401616: build_remaining_deck (deck.c:156)
-==1622==    by 0x400A6C: main (main.c:59)
-==1622== 
+==156== Memcheck, a memory error detector
+==156== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==156== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==156== Command: ./poker inp2.txt 25000
+==156== Parent PID: 155
+==156== 
+==156== Invalid write of size 8
+==156==    at 0x40149C: make_deck_exclude (deck.c:108)
+==156==    by 0x401616: build_remaining_deck (deck.c:156)
+==156==    by 0x400A6C: main (main.c:59)
+==156==  Address 0x5208090 is 0 bytes after a block of size 304 alloc'd
+==156==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==156==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==156==    by 0x401616: build_remaining_deck (deck.c:156)
+==156==    by 0x400A6C: main (main.c:59)
+==156== 
+==156== Invalid write of size 8
+==156==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==156==    by 0x401616: build_remaining_deck (deck.c:156)
+==156==    by 0x400A6C: main (main.c:59)
+==156==  Address 0x5208250 is 0 bytes after a block of size 304 alloc'd
+==156==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==156==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==156==    by 0x401616: build_remaining_deck (deck.c:156)
+==156==    by 0x400A6C: main (main.c:59)
+==156== 
 
 valgrind: m_mallocfree.c:303 (get_bszB_as_is): Assertion 'bszB_lo == bszB_hi' failed.
 valgrind: Heap block lo/hi size mismatch: lo = 368, hi = 86019936.
@@ -308,26 +308,26 @@ probably go away.  Please try that before reporting this as a bug.
 
 
 host stacktrace:
-==1622==    at 0x38083F48: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x38084064: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x380841F1: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x38091A9C: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x3807D673: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x3807BF03: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x380800DA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x3807B49A: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x38059401: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
-==1622==    by 0x802D59B05: ???
-==1622==    by 0x802CA9F2F: ???
-==1622==    by 0x80200838F: ???
-==1622==    by 0x401194: shuffle (deck.c:34)
+==156==    at 0x38083F48: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x38084064: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x380841F1: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x38091A9C: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x3807D673: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x3807BF03: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x380800DA: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x3807B49A: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x38059401: ??? (in /usr/lib/valgrind/memcheck-amd64-linux)
+==156==    by 0x802D59B05: ???
+==156==    by 0x802CA9F2F: ???
+==156==    by 0x80200838F: ???
+==156==    by 0x401194: shuffle (deck.c:34)
 
 sched status:
   running_tid=1
 
-Thread 1: status = VgTs_Runnable (lwpid 1622)
-==1622==    at 0x4011AF: shuffle (deck.c:36)
-==1622==    by 0x400AC4: main (main.c:67)
+Thread 1: status = VgTs_Runnable (lwpid 156)
+==156==    at 0x4011AF: shuffle (deck.c:36)
+==156==    by 0x400AC4: main (main.c:67)
 
 
 Note: see also the FAQ in the source distribution.
@@ -344,346 +344,346 @@ version, and what OS and version you are using.  Thanks.
 
 Running a simulation with 80000 draws for 4 hands...
 Valgrind reported errors:
-==1627== Memcheck, a memory error detector
-==1627== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1627== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1627== Command: ./poker inp3.txt 80000
-==1627== Parent PID: 1626
-==1627== 
-==1627== Invalid write of size 8
-==1627==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627==  Address 0x5208fa0 is 0 bytes after a block of size 192 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid write of size 8
-==1627==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627==  Address 0x52090f0 is 0 bytes after a block of size 192 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid read of size 8
-==1627==    at 0x4011AF: shuffle (deck.c:36)
-==1627==    by 0x400AC4: main (main.c:67)
-==1627==  Address 0x5209b68 is 24 bytes before a block of size 8 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x401488: make_deck_exclude (deck.c:108)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid write of size 8
-==1627==    at 0x4011BB: shuffle (deck.c:37)
-==1627==    by 0x400AC4: main (main.c:67)
-==1627==  Address 0x5209b68 is 24 bytes before a block of size 8 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x401488: make_deck_exclude (deck.c:108)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid read of size 8
-==1627==    at 0x40119A: shuffle (deck.c:35)
-==1627==    by 0x400AC4: main (main.c:67)
-==1627==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x401488: make_deck_exclude (deck.c:108)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid write of size 8
-==1627==    at 0x4011B2: shuffle (deck.c:36)
-==1627==    by 0x400AC4: main (main.c:67)
-==1627==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
-==1627==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1627==    by 0x401488: make_deck_exclude (deck.c:108)
-==1627==    by 0x401616: build_remaining_deck (deck.c:156)
-==1627==    by 0x400A6C: main (main.c:59)
-==1627== 
-==1627== Invalid read of size 4
-==1627==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1627==    by 0x400AD0: main (main.c:69)
-==1627==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==1627== 
-==1627== 
-==1627== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1627==  Access not within mapped region at address 0x0
-==1627==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1627==    by 0x400AD0: main (main.c:69)
-==1627==  If you believe this happened as a result of a stack
-==1627==  overflow in your program's main thread (unlikely but
-==1627==  possible), you can try to increase the size of the
-==1627==  main thread stack using the --main-stacksize= flag.
-==1627==  The main thread stack size used in this run was 8388608.
-==1627== 
-==1627== HEAP SUMMARY:
-==1627==     in use at exit: 2,160 bytes in 87 blocks
-==1627==   total heap usage: 166 allocs, 79 frees, 12,264 bytes allocated
-==1627== 
-==1627== LEAK SUMMARY:
-==1627==    definitely lost: 728 bytes in 18 blocks
-==1627==    indirectly lost: 200 bytes in 25 blocks
-==1627==      possibly lost: 0 bytes in 0 blocks
-==1627==    still reachable: 1,232 bytes in 44 blocks
-==1627==         suppressed: 0 bytes in 0 blocks
-==1627== Rerun with --leak-check=full to see details of leaked memory
-==1627== 
-==1627== For counts of detected and suppressed errors, rerun with: -v
-==1627== ERROR SUMMARY: 74 errors from 7 contexts (suppressed: 0 from 0)
+==161== Memcheck, a memory error detector
+==161== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==161== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==161== Command: ./poker inp3.txt 80000
+==161== Parent PID: 160
+==161== 
+==161== Invalid write of size 8
+==161==    at 0x40149C: make_deck_exclude (deck.c:108)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161==  Address 0x5208fa0 is 0 bytes after a block of size 192 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid write of size 8
+==161==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161==  Address 0x52090f0 is 0 bytes after a block of size 192 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid read of size 8
+==161==    at 0x4011AF: shuffle (deck.c:36)
+==161==    by 0x400AC4: main (main.c:67)
+==161==  Address 0x5209b68 is 24 bytes before a block of size 8 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x401488: make_deck_exclude (deck.c:108)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid write of size 8
+==161==    at 0x4011BB: shuffle (deck.c:37)
+==161==    by 0x400AC4: main (main.c:67)
+==161==  Address 0x5209b68 is 24 bytes before a block of size 8 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x401488: make_deck_exclude (deck.c:108)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid read of size 8
+==161==    at 0x40119A: shuffle (deck.c:35)
+==161==    by 0x400AC4: main (main.c:67)
+==161==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x401488: make_deck_exclude (deck.c:108)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid write of size 8
+==161==    at 0x4011B2: shuffle (deck.c:36)
+==161==    by 0x400AC4: main (main.c:67)
+==161==  Address 0x5209b38 is 0 bytes after a block of size 8 alloc'd
+==161==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==161==    by 0x401488: make_deck_exclude (deck.c:108)
+==161==    by 0x401616: build_remaining_deck (deck.c:156)
+==161==    by 0x400A6C: main (main.c:59)
+==161== 
+==161== Invalid read of size 4
+==161==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==161==    by 0x400AD0: main (main.c:69)
+==161==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==161== 
+==161== 
+==161== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==161==  Access not within mapped region at address 0x0
+==161==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==161==    by 0x400AD0: main (main.c:69)
+==161==  If you believe this happened as a result of a stack
+==161==  overflow in your program's main thread (unlikely but
+==161==  possible), you can try to increase the size of the
+==161==  main thread stack using the --main-stacksize= flag.
+==161==  The main thread stack size used in this run was 8388608.
+==161== 
+==161== HEAP SUMMARY:
+==161==     in use at exit: 2,160 bytes in 87 blocks
+==161==   total heap usage: 166 allocs, 79 frees, 12,264 bytes allocated
+==161== 
+==161== LEAK SUMMARY:
+==161==    definitely lost: 728 bytes in 18 blocks
+==161==    indirectly lost: 200 bytes in 25 blocks
+==161==      possibly lost: 0 bytes in 0 blocks
+==161==    still reachable: 1,232 bytes in 44 blocks
+==161==         suppressed: 0 bytes in 0 blocks
+==161== Rerun with --leak-check=full to see details of leaked memory
+==161== 
+==161== For counts of detected and suppressed errors, rerun with: -v
+==161== ERROR SUMMARY: 74 errors from 7 contexts (suppressed: 0 from 0)
 Running a simulation with 30000 draws for 2 hands...
 Valgrind reported errors:
-==1632== Memcheck, a memory error detector
-==1632== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1632== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1632== Command: ./poker inp.txt 30000
-==1632== Parent PID: 1631
-==1632== 
-==1632== Invalid write of size 8
-==1632==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1632==    by 0x401616: build_remaining_deck (deck.c:156)
-==1632==    by 0x400A6C: main (main.c:59)
-==1632==  Address 0x5207b50 is 0 bytes after a block of size 304 alloc'd
-==1632==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1632==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1632==    by 0x401616: build_remaining_deck (deck.c:156)
-==1632==    by 0x400A6C: main (main.c:59)
-==1632== 
-==1632== Invalid write of size 8
-==1632==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1632==    by 0x401616: build_remaining_deck (deck.c:156)
-==1632==    by 0x400A6C: main (main.c:59)
-==1632==  Address 0x5207d10 is 0 bytes after a block of size 304 alloc'd
-==1632==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1632==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1632==    by 0x401616: build_remaining_deck (deck.c:156)
-==1632==    by 0x400A6C: main (main.c:59)
-==1632== 
-==1632== 
-==1632== Process terminating with default action of signal 6 (SIGABRT): dumping core
-==1632==    at 0x4E6F428: raise (raise.c:54)
-==1632==    by 0x4E71029: abort (abort.c:89)
-==1632==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
-==1632==    by 0x4E67C81: __assert_fail (assert.c:101)
-==1632==    by 0x40201C: copy_straight (eval.c:333)
-==1632==    by 0x4022B8: find_straight (eval.c:373)
-==1632==    by 0x402457: evaluate_hand (eval.c:389)
-==1632==    by 0x402F12: compare_hands (eval.c:267)
-==1632==    by 0x4037AB: win_hand (main.c:20)
-==1632==    by 0x400ADB: main (main.c:71)
-==1632== 
-==1632== HEAP SUMMARY:
-==1632==     in use at exit: 2,000 bytes in 73 blocks
-==1632==   total heap usage: 158 allocs, 85 frees, 12,527 bytes allocated
-==1632== 
-==1632== LEAK SUMMARY:
-==1632==    definitely lost: 472 bytes in 9 blocks
-==1632==    indirectly lost: 0 bytes in 0 blocks
-==1632==      possibly lost: 0 bytes in 0 blocks
-==1632==    still reachable: 1,528 bytes in 64 blocks
-==1632==         suppressed: 0 bytes in 0 blocks
-==1632== Rerun with --leak-check=full to see details of leaked memory
-==1632== 
-==1632== For counts of detected and suppressed errors, rerun with: -v
-==1632== ERROR SUMMARY: 14 errors from 2 contexts (suppressed: 0 from 0)
+==166== Memcheck, a memory error detector
+==166== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==166== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==166== Command: ./poker inp.txt 30000
+==166== Parent PID: 165
+==166== 
+==166== Invalid write of size 8
+==166==    at 0x40149C: make_deck_exclude (deck.c:108)
+==166==    by 0x401616: build_remaining_deck (deck.c:156)
+==166==    by 0x400A6C: main (main.c:59)
+==166==  Address 0x5207b50 is 0 bytes after a block of size 304 alloc'd
+==166==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==166==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==166==    by 0x401616: build_remaining_deck (deck.c:156)
+==166==    by 0x400A6C: main (main.c:59)
+==166== 
+==166== Invalid write of size 8
+==166==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==166==    by 0x401616: build_remaining_deck (deck.c:156)
+==166==    by 0x400A6C: main (main.c:59)
+==166==  Address 0x5207d10 is 0 bytes after a block of size 304 alloc'd
+==166==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==166==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==166==    by 0x401616: build_remaining_deck (deck.c:156)
+==166==    by 0x400A6C: main (main.c:59)
+==166== 
+==166== 
+==166== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==166==    at 0x4E6F428: raise (raise.c:54)
+==166==    by 0x4E71029: abort (abort.c:89)
+==166==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==166==    by 0x4E67C81: __assert_fail (assert.c:101)
+==166==    by 0x40201C: copy_straight (eval.c:333)
+==166==    by 0x4022B8: find_straight (eval.c:373)
+==166==    by 0x402457: evaluate_hand (eval.c:389)
+==166==    by 0x402F12: compare_hands (eval.c:267)
+==166==    by 0x4037AB: win_hand (main.c:20)
+==166==    by 0x400ADB: main (main.c:71)
+==166== 
+==166== HEAP SUMMARY:
+==166==     in use at exit: 2,000 bytes in 73 blocks
+==166==   total heap usage: 158 allocs, 85 frees, 12,527 bytes allocated
+==166== 
+==166== LEAK SUMMARY:
+==166==    definitely lost: 472 bytes in 9 blocks
+==166==    indirectly lost: 0 bytes in 0 blocks
+==166==      possibly lost: 0 bytes in 0 blocks
+==166==    still reachable: 1,528 bytes in 64 blocks
+==166==         suppressed: 0 bytes in 0 blocks
+==166== Rerun with --leak-check=full to see details of leaked memory
+==166== 
+==166== For counts of detected and suppressed errors, rerun with: -v
+==166== ERROR SUMMARY: 14 errors from 2 contexts (suppressed: 0 from 0)
  - Next, few Seven Card Stud hands
 Running a simulation with 30000 draws for 2 hands...
 Valgrind reported errors:
-==1637== Memcheck, a memory error detector
-==1637== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1637== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1637== Command: ./poker inp.txt 30000
-==1637== Parent PID: 1636
-==1637== 
-==1637== Invalid write of size 8
-==1637==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1637==    by 0x401616: build_remaining_deck (deck.c:156)
-==1637==    by 0x400A6C: main (main.c:59)
-==1637==  Address 0x5208160 is 0 bytes after a block of size 304 alloc'd
-==1637==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1637==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1637==    by 0x401616: build_remaining_deck (deck.c:156)
-==1637==    by 0x400A6C: main (main.c:59)
-==1637== 
-==1637== Invalid write of size 8
-==1637==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1637==    by 0x401616: build_remaining_deck (deck.c:156)
-==1637==    by 0x400A6C: main (main.c:59)
-==1637==  Address 0x5208320 is 0 bytes after a block of size 304 alloc'd
-==1637==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1637==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1637==    by 0x401616: build_remaining_deck (deck.c:156)
-==1637==    by 0x400A6C: main (main.c:59)
-==1637== 
-==1637== 
-==1637== Process terminating with default action of signal 6 (SIGABRT): dumping core
-==1637==    at 0x4E6F428: raise (raise.c:54)
-==1637==    by 0x4E71029: abort (abort.c:89)
-==1637==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
-==1637==    by 0x4E67C81: __assert_fail (assert.c:101)
-==1637==    by 0x40201C: copy_straight (eval.c:333)
-==1637==    by 0x4022B8: find_straight (eval.c:373)
-==1637==    by 0x402457: evaluate_hand (eval.c:389)
-==1637==    by 0x402F12: compare_hands (eval.c:267)
-==1637==    by 0x4037AB: win_hand (main.c:20)
-==1637==    by 0x400ADB: main (main.c:71)
-==1637== 
-==1637== HEAP SUMMARY:
-==1637==     in use at exit: 2,136 bytes in 80 blocks
-==1637==   total heap usage: 3,315 allocs, 3,235 frees, 101,063 bytes allocated
-==1637== 
-==1637== LEAK SUMMARY:
-==1637==    definitely lost: 480 bytes in 10 blocks
-==1637==    indirectly lost: 0 bytes in 0 blocks
-==1637==      possibly lost: 0 bytes in 0 blocks
-==1637==    still reachable: 1,656 bytes in 70 blocks
-==1637==         suppressed: 0 bytes in 0 blocks
-==1637== Rerun with --leak-check=full to see details of leaked memory
-==1637== 
-==1637== For counts of detected and suppressed errors, rerun with: -v
-==1637== ERROR SUMMARY: 16 errors from 2 contexts (suppressed: 0 from 0)
+==171== Memcheck, a memory error detector
+==171== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==171== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==171== Command: ./poker inp.txt 30000
+==171== Parent PID: 170
+==171== 
+==171== Invalid write of size 8
+==171==    at 0x40149C: make_deck_exclude (deck.c:108)
+==171==    by 0x401616: build_remaining_deck (deck.c:156)
+==171==    by 0x400A6C: main (main.c:59)
+==171==  Address 0x5208160 is 0 bytes after a block of size 304 alloc'd
+==171==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==171==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==171==    by 0x401616: build_remaining_deck (deck.c:156)
+==171==    by 0x400A6C: main (main.c:59)
+==171== 
+==171== Invalid write of size 8
+==171==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==171==    by 0x401616: build_remaining_deck (deck.c:156)
+==171==    by 0x400A6C: main (main.c:59)
+==171==  Address 0x5208320 is 0 bytes after a block of size 304 alloc'd
+==171==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==171==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==171==    by 0x401616: build_remaining_deck (deck.c:156)
+==171==    by 0x400A6C: main (main.c:59)
+==171== 
+==171== 
+==171== Process terminating with default action of signal 6 (SIGABRT): dumping core
+==171==    at 0x4E6F428: raise (raise.c:54)
+==171==    by 0x4E71029: abort (abort.c:89)
+==171==    by 0x4E67BD6: __assert_fail_base (assert.c:92)
+==171==    by 0x4E67C81: __assert_fail (assert.c:101)
+==171==    by 0x40201C: copy_straight (eval.c:333)
+==171==    by 0x4022B8: find_straight (eval.c:373)
+==171==    by 0x402457: evaluate_hand (eval.c:389)
+==171==    by 0x402F12: compare_hands (eval.c:267)
+==171==    by 0x4037AB: win_hand (main.c:20)
+==171==    by 0x400ADB: main (main.c:71)
+==171== 
+==171== HEAP SUMMARY:
+==171==     in use at exit: 2,136 bytes in 80 blocks
+==171==   total heap usage: 3,315 allocs, 3,235 frees, 101,063 bytes allocated
+==171== 
+==171== LEAK SUMMARY:
+==171==    definitely lost: 480 bytes in 10 blocks
+==171==    indirectly lost: 0 bytes in 0 blocks
+==171==      possibly lost: 0 bytes in 0 blocks
+==171==    still reachable: 1,656 bytes in 70 blocks
+==171==         suppressed: 0 bytes in 0 blocks
+==171== Rerun with --leak-check=full to see details of leaked memory
+==171== 
+==171== For counts of detected and suppressed errors, rerun with: -v
+==171== ERROR SUMMARY: 16 errors from 2 contexts (suppressed: 0 from 0)
 Running a simulation with 40000 draws for 3 hands...
 Valgrind reported errors:
-==1642== Memcheck, a memory error detector
-==1642== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1642== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1642== Command: ./poker inp2.txt 40000
-==1642== Parent PID: 1641
-==1642== 
-==1642== Invalid write of size 8
-==1642==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1642==    by 0x401616: build_remaining_deck (deck.c:156)
-==1642==    by 0x400A6C: main (main.c:59)
-==1642==  Address 0x5208ba8 is 0 bytes after a block of size 248 alloc'd
-==1642==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1642==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1642==    by 0x401616: build_remaining_deck (deck.c:156)
-==1642==    by 0x400A6C: main (main.c:59)
-==1642== 
-==1642== Invalid write of size 8
-==1642==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1642==    by 0x401616: build_remaining_deck (deck.c:156)
-==1642==    by 0x400A6C: main (main.c:59)
-==1642==  Address 0x5208d38 is 0 bytes after a block of size 248 alloc'd
-==1642==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1642==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1642==    by 0x401616: build_remaining_deck (deck.c:156)
-==1642==    by 0x400A6C: main (main.c:59)
-==1642== 
-==1642== 
-==1642== HEAP SUMMARY:
-==1642==     in use at exit: 488 bytes in 11 blocks
-==1642==   total heap usage: 239,686 allocs, 239,675 frees, 6,719,346 bytes allocated
-==1642== 
-==1642== LEAK SUMMARY:
-==1642==    definitely lost: 488 bytes in 11 blocks
-==1642==    indirectly lost: 0 bytes in 0 blocks
-==1642==      possibly lost: 0 bytes in 0 blocks
-==1642==    still reachable: 0 bytes in 0 blocks
-==1642==         suppressed: 0 bytes in 0 blocks
-==1642== Rerun with --leak-check=full to see details of leaked memory
-==1642== 
-==1642== For counts of detected and suppressed errors, rerun with: -v
-==1642== ERROR SUMMARY: 18 errors from 2 contexts (suppressed: 0 from 0)
+==176== Memcheck, a memory error detector
+==176== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==176== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==176== Command: ./poker inp2.txt 40000
+==176== Parent PID: 175
+==176== 
+==176== Invalid write of size 8
+==176==    at 0x40149C: make_deck_exclude (deck.c:108)
+==176==    by 0x401616: build_remaining_deck (deck.c:156)
+==176==    by 0x400A6C: main (main.c:59)
+==176==  Address 0x5208ba8 is 0 bytes after a block of size 248 alloc'd
+==176==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==176==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==176==    by 0x401616: build_remaining_deck (deck.c:156)
+==176==    by 0x400A6C: main (main.c:59)
+==176== 
+==176== Invalid write of size 8
+==176==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==176==    by 0x401616: build_remaining_deck (deck.c:156)
+==176==    by 0x400A6C: main (main.c:59)
+==176==  Address 0x5208d38 is 0 bytes after a block of size 248 alloc'd
+==176==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==176==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==176==    by 0x401616: build_remaining_deck (deck.c:156)
+==176==    by 0x400A6C: main (main.c:59)
+==176== 
+==176== 
+==176== HEAP SUMMARY:
+==176==     in use at exit: 488 bytes in 11 blocks
+==176==   total heap usage: 239,686 allocs, 239,675 frees, 6,719,346 bytes allocated
+==176== 
+==176== LEAK SUMMARY:
+==176==    definitely lost: 488 bytes in 11 blocks
+==176==    indirectly lost: 0 bytes in 0 blocks
+==176==      possibly lost: 0 bytes in 0 blocks
+==176==    still reachable: 0 bytes in 0 blocks
+==176==         suppressed: 0 bytes in 0 blocks
+==176== Rerun with --leak-check=full to see details of leaked memory
+==176== 
+==176== For counts of detected and suppressed errors, rerun with: -v
+==176== ERROR SUMMARY: 18 errors from 2 contexts (suppressed: 0 from 0)
  - Then one from a completely made up poker variant
 Running a simulation with 100000 draws for 6 hands...
 Valgrind reported errors:
-==1647== Memcheck, a memory error detector
-==1647== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
-==1647== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
-==1647== Command: ./poker whacky.txt 100000
-==1647== Parent PID: 1646
-==1647== 
-==1647== Invalid write of size 8
-==1647==    at 0x40149C: make_deck_exclude (deck.c:108)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647==  Address 0x520a9d0 is 0 bytes after a block of size 80 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x4013C2: make_deck_exclude (deck.c:99)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid write of size 8
-==1647==    at 0x4014B7: make_deck_exclude (deck.c:110)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647==  Address 0x520aab0 is 0 bytes after a block of size 80 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x4013E3: make_deck_exclude (deck.c:102)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid read of size 8
-==1647==    at 0x4011AF: shuffle (deck.c:36)
-==1647==    by 0x400AC4: main (main.c:67)
-==1647==  Address 0x520b0a8 is 16 bytes after a block of size 8 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x401488: make_deck_exclude (deck.c:108)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid write of size 8
-==1647==    at 0x4011BB: shuffle (deck.c:37)
-==1647==    by 0x400AC4: main (main.c:67)
-==1647==  Address 0x520b0a8 is 16 bytes after a block of size 8 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x401488: make_deck_exclude (deck.c:108)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid read of size 8
-==1647==    at 0x40119A: shuffle (deck.c:35)
-==1647==    by 0x400AC4: main (main.c:67)
-==1647==  Address 0x520b098 is 0 bytes after a block of size 8 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x401488: make_deck_exclude (deck.c:108)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid write of size 8
-==1647==    at 0x4011B2: shuffle (deck.c:36)
-==1647==    by 0x400AC4: main (main.c:67)
-==1647==  Address 0x520b098 is 0 bytes after a block of size 8 alloc'd
-==1647==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
-==1647==    by 0x401488: make_deck_exclude (deck.c:108)
-==1647==    by 0x401616: build_remaining_deck (deck.c:156)
-==1647==    by 0x400A6C: main (main.c:59)
-==1647== 
-==1647== Invalid read of size 4
-==1647==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1647==    by 0x400AD0: main (main.c:69)
-==1647==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-==1647== 
-==1647== 
-==1647== Process terminating with default action of signal 11 (SIGSEGV): dumping core
-==1647==  Access not within mapped region at address 0x0
-==1647==    at 0x4031AC: future_cards_from_deck (future.c:51)
-==1647==    by 0x400AD0: main (main.c:69)
-==1647==  If you believe this happened as a result of a stack
-==1647==  overflow in your program's main thread (unlikely but
-==1647==  possible), you can try to increase the size of the
-==1647==  main thread stack using the --main-stacksize= flag.
-==1647==  The main thread stack size used in this run was 8388608.
-==1647== 
-==1647== HEAP SUMMARY:
-==1647==     in use at exit: 2,392 bytes in 100 blocks
-==1647==   total heap usage: 229 allocs, 129 frees, 13,660 bytes allocated
-==1647== 
-==1647== LEAK SUMMARY:
-==1647==    definitely lost: 632 bytes in 20 blocks
-==1647==    indirectly lost: 112 bytes in 14 blocks
-==1647==      possibly lost: 0 bytes in 0 blocks
-==1647==    still reachable: 1,648 bytes in 66 blocks
-==1647==         suppressed: 0 bytes in 0 blocks
-==1647== Rerun with --leak-check=full to see details of leaked memory
-==1647== 
-==1647== For counts of detected and suppressed errors, rerun with: -v
-==1647== ERROR SUMMARY: 55 errors from 7 contexts (suppressed: 0 from 0)
+==181== Memcheck, a memory error detector
+==181== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==181== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==181== Command: ./poker whacky.txt 100000
+==181== Parent PID: 180
+==181== 
+==181== Invalid write of size 8
+==181==    at 0x40149C: make_deck_exclude (deck.c:108)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181==  Address 0x520a9d0 is 0 bytes after a block of size 80 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x4013C2: make_deck_exclude (deck.c:99)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid write of size 8
+==181==    at 0x4014B7: make_deck_exclude (deck.c:110)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181==  Address 0x520aab0 is 0 bytes after a block of size 80 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x4013E3: make_deck_exclude (deck.c:102)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid read of size 8
+==181==    at 0x4011AF: shuffle (deck.c:36)
+==181==    by 0x400AC4: main (main.c:67)
+==181==  Address 0x520b0a8 is 16 bytes after a block of size 8 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x401488: make_deck_exclude (deck.c:108)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid write of size 8
+==181==    at 0x4011BB: shuffle (deck.c:37)
+==181==    by 0x400AC4: main (main.c:67)
+==181==  Address 0x520b0a8 is 16 bytes after a block of size 8 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x401488: make_deck_exclude (deck.c:108)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid read of size 8
+==181==    at 0x40119A: shuffle (deck.c:35)
+==181==    by 0x400AC4: main (main.c:67)
+==181==  Address 0x520b098 is 0 bytes after a block of size 8 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x401488: make_deck_exclude (deck.c:108)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid write of size 8
+==181==    at 0x4011B2: shuffle (deck.c:36)
+==181==    by 0x400AC4: main (main.c:67)
+==181==  Address 0x520b098 is 0 bytes after a block of size 8 alloc'd
+==181==    at 0x4C2DB8F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==181==    by 0x401488: make_deck_exclude (deck.c:108)
+==181==    by 0x401616: build_remaining_deck (deck.c:156)
+==181==    by 0x400A6C: main (main.c:59)
+==181== 
+==181== Invalid read of size 4
+==181==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==181==    by 0x400AD0: main (main.c:69)
+==181==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==181== 
+==181== 
+==181== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==181==  Access not within mapped region at address 0x0
+==181==    at 0x4031AC: future_cards_from_deck (future.c:51)
+==181==    by 0x400AD0: main (main.c:69)
+==181==  If you believe this happened as a result of a stack
+==181==  overflow in your program's main thread (unlikely but
+==181==  possible), you can try to increase the size of the
+==181==  main thread stack using the --main-stacksize= flag.
+==181==  The main thread stack size used in this run was 8388608.
+==181== 
+==181== HEAP SUMMARY:
+==181==     in use at exit: 2,392 bytes in 100 blocks
+==181==   total heap usage: 229 allocs, 129 frees, 13,660 bytes allocated
+==181== 
+==181== LEAK SUMMARY:
+==181==    definitely lost: 632 bytes in 20 blocks
+==181==    indirectly lost: 112 bytes in 14 blocks
+==181==      possibly lost: 0 bytes in 0 blocks
+==181==    still reachable: 1,648 bytes in 66 blocks
+==181==         suppressed: 0 bytes in 0 blocks
+==181== Rerun with --leak-check=full to see details of leaked memory
+==181== 
+==181== For counts of detected and suppressed errors, rerun with: -v
+==181== ERROR SUMMARY: 55 errors from 7 contexts (suppressed: 0 from 0)
 
 Overall Grade: F
