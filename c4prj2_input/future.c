@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -179,3 +180,6 @@ void future_cards_from_deck(deck_t * deck, future_cards_t * fc){
   }
   
 }
+=======
+c
+>>>>>>> e44c604c851fae6f73bd4ec30c90079014228b28
