@@ -36,6 +36,19 @@ void shuffle(deck_t * d){
     cards[k] = cards[r];
     cards[r] = temp;
   }
+void assert_full_deck(deck_t * d) {
+  int count ;
+  card_t **cards = d->cards;
+  card_t c;
+  for(size_t i=0;i<d->n_cards;i++){
+    c= **(cards+i);
+    count=0;
+    for(size_t j=0;j<d->n_cards;j++) {
+    if(equals(**(cards+j),c)) count++;
+     }
+  assert(count==1);
+    }
+}
   
   void add_card_to( deck_t * deck, card_t c){
   //add a particular card to a given deck (realloc)
@@ -163,16 +176,3 @@ void free_deck(deck_t * deck){
 }
 }
 
-void assert_full_deck(deck_t * d) {
-  int count ;
-  card_t **cards = d->cards;
-  card_t c;
-  for(size_t i=0;i<d->n_cards;i++){
-    c= **(cards+i);
-    count=0;
-    for(size_t j=0;j<d->n_cards;j++) {
-    if(equals(**(cards+j),c)) count++;
-     }
-  assert(count==1);
-    }
-}
