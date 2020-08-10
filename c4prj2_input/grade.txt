@@ -1,0 +1,209 @@
+Grading at Mon Aug 10 15:48:13 UTC 2020
+Compiling cards.c -> cards.o
+Compiling deck.c -> deck.o
+Compiling input.c -> input.o
+Compiling future.c -> future.o
+future.c:1:1: error: expected identifier or ‘(’ before ‘<<’ token
+ <<<<<<< HEAD
+ ^
+In file included from /usr/include/stdio.h:74:0,
+                 from future.c:2:
+/usr/include/libio.h:302:3: error: unknown type name ‘size_t’
+   size_t __pad5;
+   ^
+/usr/include/libio.h:305:67: error: ‘size_t’ undeclared here (not in a function)
+   char _unused2[15 * sizeof (int) - 4 * sizeof (void *) - sizeof (size_t)];
+                                                                   ^
+/usr/include/libio.h:333:62: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ typedef __ssize_t __io_read_fn (void *__cookie, char *__buf, size_t __nbytes);
+                                                              ^
+/usr/include/libio.h:342:6: error: expected declaration specifiers or ‘...’ before ‘size_t’
+      size_t __n);
+      ^
+/usr/include/libio.h:464:19: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘_IO_sgetn’
+ extern _IO_size_t _IO_sgetn (_IO_FILE *, void *, _IO_size_t);
+                   ^
+In file included from future.c:2:0:
+/usr/include/stdio.h:319:35: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern FILE *fmemopen (void *__s, size_t __len, const char *__modes)
+                                   ^
+/usr/include/stdio.h:325:47: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern FILE *open_memstream (char **__bufloc, size_t *__sizeloc) __THROW __wur;
+                                               ^
+/usr/include/stdio.h:337:20: error: expected declaration specifiers or ‘...’ before ‘size_t’
+       int __modes, size_t __n) __THROW;
+                    ^
+/usr/include/stdio.h:344:10: error: expected declaration specifiers or ‘...’ before ‘size_t’
+          size_t __size) __THROW;
+          ^
+/usr/include/stdio.h:386:44: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern int snprintf (char *__restrict __s, size_t __maxlen,
+                                            ^
+/usr/include/stdio.h:390:45: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern int vsnprintf (char *__restrict __s, size_t __maxlen,
+                                             ^
+/usr/include/stdio.h:666:11: error: expected declaration specifiers or ‘...’ before ‘size_t’
+           size_t *__restrict __n, int __delimiter,
+           ^
+/usr/include/stdio.h:669:9: error: expected declaration specifiers or ‘...’ before ‘size_t’
+         size_t *__restrict __n, int __delimiter,
+         ^
+/usr/include/stdio.h:679:8: error: expected declaration specifiers or ‘...’ before ‘size_t’
+        size_t *__restrict __n,
+        ^
+/usr/include/stdio.h:709:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘fread’
+ extern size_t fread (void *__restrict __ptr, size_t __size,
+               ^
+/usr/include/stdio.h:715:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘fwrite’
+ extern size_t fwrite (const void *__restrict __ptr, size_t __size,
+               ^
+/usr/include/stdio.h:737:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘fread_unlocked’
+ extern size_t fread_unlocked (void *__restrict __ptr, size_t __size,
+               ^
+/usr/include/stdio.h:739:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘fwrite_unlocked’
+ extern size_t fwrite_unlocked (const void *__restrict __ptr, size_t __size,
+               ^
+In file included from future.c:3:0:
+/usr/include/stdlib.h:139:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘__ctype_get_mb_cur_max’
+ extern size_t __ctype_get_mb_cur_max (void) __THROW __wur;
+               ^
+In file included from future.c:3:0:
+/usr/include/stdlib.h:331:4: error: expected declaration specifiers or ‘...’ before ‘size_t’
+    size_t __statelen) __THROW __nonnull ((2));
+    ^
+/usr/include/stdlib.h:361:4: error: expected declaration specifiers or ‘...’ before ‘size_t’
+    size_t __statelen,
+    ^
+/usr/include/stdlib.h:466:22: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *malloc (size_t __size) __THROW __attribute_malloc__ __wur;
+                      ^
+/usr/include/stdlib.h:468:22: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *calloc (size_t __nmemb, size_t __size)
+                      ^
+/usr/include/stdlib.h:468:38: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *calloc (size_t __nmemb, size_t __size)
+                                      ^
+/usr/include/stdlib.h:480:36: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *realloc (void *__ptr, size_t __size)
+                                    ^
+In file included from /usr/include/stdlib.h:492:0,
+                 from future.c:3:
+/usr/include/alloca.h:32:22: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *alloca (size_t __size) __THROW;
+                      ^
+In file included from future.c:3:0:
+/usr/include/stdlib.h:498:22: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void *valloc (size_t __size) __THROW __attribute_malloc__ __wur;
+                      ^
+/usr/include/stdlib.h:503:45: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+                                             ^
+/usr/include/stdlib.h:503:65: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern int posix_memalign (void **__memptr, size_t __alignment, size_t __size)
+                                                                 ^
+/usr/include/stdlib.h:755:9: error: expected declaration specifiers or ‘...’ before ‘size_t’
+         size_t __nmemb, size_t __size, __compar_fn_t __compar)
+         ^
+/usr/include/stdlib.h:755:25: error: expected declaration specifiers or ‘...’ before ‘size_t’
+         size_t __nmemb, size_t __size, __compar_fn_t __compar)
+                         ^
+/usr/include/stdlib.h:764:34: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void qsort (void *__base, size_t __nmemb, size_t __size,
+                                  ^
+/usr/include/stdlib.h:764:50: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern void qsort (void *__base, size_t __nmemb, size_t __size,
+                                                  ^
+/usr/include/stdlib.h:843:6: error: expected declaration specifiers or ‘...’ before ‘size_t’
+      size_t __len) __THROW __nonnull ((3, 4, 5));
+      ^
+/usr/include/stdlib.h:846:6: error: expected declaration specifiers or ‘...’ before ‘size_t’
+      size_t __len) __THROW __nonnull ((3, 4, 5));
+      ^
+/usr/include/stdlib.h:850:31: error: expected declaration specifiers or ‘...’ before ‘size_t’
+       char *__restrict __buf, size_t __len)
+                               ^
+/usr/include/stdlib.h:854:31: error: expected declaration specifiers or ‘...’ before ‘size_t’
+       char *__restrict __buf, size_t __len)
+                               ^
+/usr/include/stdlib.h:862:36: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ extern int mblen (const char *__s, size_t __n) __THROW;
+                                    ^
+/usr/include/stdlib.h:866:34: error: expected declaration specifiers or ‘...’ before ‘size_t’
+      const char *__restrict __s, size_t __n) __THROW;
+                                  ^
+/usr/include/stdlib.h:873:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘mbstowcs’
+ extern size_t mbstowcs (wchar_t *__restrict  __pwcs,
+               ^
+/usr/include/stdlib.h:876:15: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘wcstombs’
+ extern size_t wcstombs (char *__restrict __s,
+               ^
+In file included from future.c:5:0:
+deck.h:7:6: error: expected specifier-qualifier-list before ‘size_t’
+      size_t n_cards;
+      ^
+deck.h:20:48: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) ;
+                                                ^
+In file included from future.c:6:0:
+future.h:8:3: error: expected specifier-qualifier-list before ‘size_t’
+   size_t n_decks;
+   ^
+future.h:11:43: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ void add_future_card(future_cards_t * fc, size_t index, card_t * ptr) ;
+                                           ^
+future.c: In function ‘printDECK’:
+future.c:11:28: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_cards’
+   for ( int i = 0; i < deck->n_cards; i++){
+                            ^
+future.c: In function ‘printFC’:
+future.c:23:34: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+   printf("fc->n_decks: %zu\n", fc->n_decks); 
+                                  ^
+future.c:24:25: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+   for (int i = 0; i < fc->n_decks; i++){
+                         ^
+future.c: At top level:
+future.c:32:42: error: expected declaration specifiers or ‘...’ before ‘size_t’
+ void add_future_card(future_cards_t *fc, size_t index, card_t * ptr){
+                                          ^
+future.c: In function ‘future_cards_from_deck’:
+future.c:139:11: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_cards’
+   if( deck->n_cards < fc->n_decks){
+           ^
+future.c:139:25: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+   if( deck->n_cards < fc->n_decks){
+                         ^
+future.c:144:25: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+   for (int i = 0; i < fc->n_decks; i++){
+                         ^
+future.c:145:21: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_cards’
+     if (fc->decks[i].n_cards == 0){
+                     ^
+future.c:148:37: error: ‘deck_t {aka struct deck_tag}’ has no member named ‘n_cards’
+     for (int j = 0; j < fc->decks[i].n_cards; j++){
+                                     ^
+future.c:164:26: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+   for ( int i = 0; i < fc->n_decks; i++){
+                          ^
+future.c:167:30: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+       for (int k = i; k < (fc->n_decks - 1); k++){
+                              ^
+future.c:173:9: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+       fc->n_decks--;
+         ^
+future.c:179:17: error: implicit declaration of function ‘realloc’ [-Werror=implicit-function-declaration]
+     fc->decks = realloc(fc->decks, (fc->n_decks)*sizeof(deck_t));
+                 ^
+future.c:179:17: error: incompatible implicit declaration of built-in function ‘realloc’ [-Werror]
+future.c:179:17: note: include ‘<stdlib.h>’ or provide a declaration of ‘realloc’
+future.c:179:39: error: ‘future_cards_t {aka struct future_cards_tag}’ has no member named ‘n_decks’
+     fc->decks = realloc(fc->decks, (fc->n_decks)*sizeof(deck_t));
+                                       ^
+future.c: At top level:
+future.c:183:1: error: expected identifier or ‘(’ before ‘==’ token
+ =======
+ ^
+cc1: all warnings being treated as errors
+Compilation of future.c failed
+
+Overall Grade: F
