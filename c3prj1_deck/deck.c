@@ -36,6 +36,7 @@ void shuffle(deck_t * d){
     cards[k] = cards[r];
     cards[r] = temp;
   }
+}
 void assert_full_deck(deck_t * d) {
   int count ;
   card_t **cards = d->cards;
@@ -174,5 +175,5 @@ void free_deck(deck_t * deck){
   free(deck);
   //deck = NULL;
 }
-}
+
 
