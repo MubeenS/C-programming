@@ -1,4 +1,4 @@
-Grading at Mon Aug 10 16:44:53 UTC 2020
+Grading at Mon Aug 10 16:47:18 UTC 2020
 Running 'make clean' to do a clean build of your project
 rm -rf *.o poker *~
 Running 'make poker OTHERFLAGS=-O3' to build your project
@@ -8,17 +8,17 @@ gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o eval.o eval.c
 gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o future.o future.c
 gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o input.o input.c
 gcc -Wall -Werror -ggdb3 -std=gnu99 -pedantic -O3   -c -o main.o main.c
-main.c:11:1: error: expected identifier or ‘(’ before ‘<<’ token
- <<<<<<< HEAD
- ^
 main.c: In function ‘main’:
-main.c:115:3: error: implicit declaration of function ‘free_hands’ [-Werror=implicit-function-declaration]
-   free_hands(hands,n_hands);
-   ^
-main.c:125:1: error: expected expression before ‘==’ token
- =======
+main.c:125:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ int win_hand(deck_t ** deck_array,int n_hands){
  ^
-main.c:212:1: error: expected declaration or statement at end of input
+main.c:154:1: error: ISO C forbids nested functions [-Werror=pedantic]
+ int main(int argc, char ** argv) {
+ ^
+main.c:154:5: error: ‘main’ is normally a non-static function [-Werror=main]
+ int main(int argc, char ** argv) {
+     ^
+main.c:211:1: error: expected declaration or statement at end of input
  }
  ^
 cc1: all warnings being treated as errors
