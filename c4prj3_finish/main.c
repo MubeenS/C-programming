@@ -8,7 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-<<<<<<< HEAD
 void free_hands(deck_t **hands, size_t n_hands){
   if(hands!=NULL){
     for(size_t i=0;i<n_hands;i++){
@@ -122,7 +121,7 @@ int main(int argc, char ** argv) {
     return EXIT_FAILURE;
   }
   
-=======
+
 int win_hand(deck_t ** deck_array,int n_hands){
   int w[n_hands+1];
   for(int u=0;u<n_hands+1;u++) w[u]=0;  
@@ -207,6 +206,6 @@ int main(int argc, char ** argv) {
     fprintf(stderr, "close file");
     return EXIT_FAILURE;
   }
->>>>>>> d85dc27bad99c8facdff761b58cec679d21f9388
+
   return EXIT_SUCCESS;
 }
