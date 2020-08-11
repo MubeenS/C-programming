@@ -8,7 +8,6 @@
 #include "future.h"
 #include "input.h"
 
-
 void actScore(deck_t ** hands, size_t n_hands, int * win_arr){
   size_t bt_hd_idex = 0;
   int comp_res = 0;
@@ -66,35 +65,6 @@ int main(int argc, char ** argv) {
   future_cards_t * fc = (future_cards_t *)malloc(sizeof(*fc));
   fc->decks = NULL;
   fc->n_decks = 0;
-
-int win_hand(deck_t ** deck_array,int n_hands){
-  int w[n_hands+1];
-  for(int u=0;u<n_hands+1;u++) w[u]=0;  
-  int v=0;
-  for(int i =0;i<n_hands-1;i++){
-    for (int j=i+1;j<n_hands;j++){
-      // print_hand(deck_array[i]);
-      //            print_hand(deck_array[j]);
-      // printf("\n");
-      v=compare_hands(deck_array[i],deck_array[j]);
-      if(v>0) w[i]++;
-      else if (v<0) w[j]++;
-      else w[n_hands]++;  
-    }
-  }
-  unsigned largest= 0;
-  for(int x=0;x<n_hands+1;x++){
-    if(w[x] > w[largest])largest=x;
-  }
-   int count=0;  
-    if(w[n_hands]>0){ 
-      for(int x=0;x<n_hands+1;x++){
-      	if(w[x] == w[largest]) count++;
-	 }
-     }
-    if(count>1) return n_hands;
-  return  largest;  
-}
  
   if(argc == 2){
     n_trails = 10000;
@@ -118,7 +88,6 @@ int win_hand(deck_t ** deck_array,int n_hands){
   for(size_t h=0; h<n_hands; h++){
     printf("Hand %zu won %u / %u times (%.2f%%)\n", h, win_arr[h], n_trails, 100*(float)win_arr[h]/(float)n_trails);
   }
-
   printf("And there were %u ties\n", win_arr[n_hands]);
   freeAll(fc, hands, n_hands, rem_cards, win_arr);
   fclose(f);
