@@ -10,7 +10,7 @@
 
 int win_hand(deck_t ** deck_array,int n_hands){
   int w[n_hands+1];
-  for(int u=0;u<n_hands+1;u++) w[u]=0;  
+  for(int i=0;i<n_hands+1;i++) w[i]=0;
   int v=0;
   for(int i =0;i<n_hands-1;i++){
     for (int j=i+1;j<n_hands;j++){
